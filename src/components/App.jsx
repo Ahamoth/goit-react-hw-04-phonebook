@@ -7,7 +7,13 @@ const LS_KEY = 'contactbook-items';
 
 export const App = () => {
   const [contacts, setContacts] = useState(
-    () => JSON.parse(localStorage.getItem(LS_KEY)) ?? contacts
+    () => JSON.parse(localStorage.getItem(LS_KEY)) ?? [
+        { id: 'id-1', name: 'Andrey', number: '380955007040' },
+        { id: 'id-2', name: 'Sergey', number: '380955007050' },
+        { id: 'id-3', name: 'Elena', number: '380955007060' },
+        { id: 'id-4', name: 'Olga', number: '380955007070' },
+        { id: 'id-5', name: 'Ihor', number: '380955007080' },
+      ]
   );
   const [filter, setFilter] = useState('');
 
